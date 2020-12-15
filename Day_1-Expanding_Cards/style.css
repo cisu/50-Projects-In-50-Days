@@ -21,7 +21,7 @@ body {
 }
 
 .panel {
-    background-size: auto cover;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     height: 80vh;
@@ -48,7 +48,8 @@ body {
 }
 
 .panel.active {
-    flex: 4;
+    flex: 5;
+    background-position:  center center;
 }
 
 .panel.active h3 {
@@ -61,7 +62,7 @@ body {
     .container {
         width: 100vw;
     }
-    
+
     .panel:nth-of-type(4),
     .panel:nth-of-type(5){
         display: none;

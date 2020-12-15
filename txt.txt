@@ -1,0 +1,7 @@
+1) Create new branch
+
+git branch day-2 
+
+2) push to origin to the new branch
+
+git push origin day-2
