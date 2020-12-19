@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0; }
+
+.bg {
+  background: url("../images/dark-rider-JmVaNyemtN8-unsplash.jpg") no-repeat center center/cover;
+  position: absolute;
+  top: -30;
+  left: -30;
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);
+  z-index: -1;
+  filter: blur(0px); }
+
+.loading-text {
+  font-size: 50px;
+  color: #fff;
+  text-shadow: 2px 2px 2px black; }
+
+.main-content {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  position: absolute;
+  top: 30%;
+  left: 10%; }
