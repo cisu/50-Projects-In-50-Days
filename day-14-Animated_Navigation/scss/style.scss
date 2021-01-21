@@ -56,6 +56,16 @@ nav {
         margin: 0 10px;
       }
     }
+
+    .icon {
+      .line1 {
+        transform: rotate(-765deg) translateY(5.5px);
+      }
+
+      .line2 {
+        transform: rotate(765deg) translateY(-5.5px);
+      }
+    }
   }
 
   ul {
@@ -68,6 +78,35 @@ nav {
       transform: rotateY(0deg);
       opacity: 0;
       transition: transform 0.6s linear, opacity 0.6s linear;
+    }
+  }
+
+  .icon {
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    height: 30px;
+    width: 20px;
+
+    &:focus {
+      outline: 0;
+    }
+
+    .line {
+      background-color: $bg-secondary;
+      height: 2px;
+      width: 20px;
+      top: 10px;
+      left: 5;
+      position: absolute;
+      transition: transform 0.6s linear;
+    }
+
+    .line2 {
+      top: auto;
+      bottom: 10px;
     }
   }
 }
