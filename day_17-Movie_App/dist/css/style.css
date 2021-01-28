@@ -1,80 +1,98 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:wght@200,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+:root {
+  --primary-color: #22254b;
+  --secondary-color: #373b69;
+}
+
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
-  background-color: #22254b;
-  font-family: "Poppins", sans-serif;
+  background-color: var(--primary-color);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
 }
 
 header {
   padding: 1rem;
   display: flex;
   justify-content: flex-end;
-  background: #373b69;
+  background-color: var(--secondary-color);
 }
-header .search {
-  background: transparent;
-  border: 2px solid #22254b;
+
+.search {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
   border-radius: 50px;
   font-family: inherit;
   font-size: 1rem;
   padding: 0.5rem 1rem;
   color: #fff;
 }
-header .search::placeholder {
+
+.search::placeholder {
   color: #7378c5;
 }
-header .search:focus {
+
+.search:focus {
   outline: none;
-  background-color: #22254b;
+  background-color: var(--primary-color);
 }
 
 main {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
-main .movie {
+
+.movie {
   width: 300px;
   margin: 1rem;
-  background-color: #373b69;
+  background-color: var(--secondary-color);
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
   border-radius: 3px;
 }
-main .movie img {
+
+.movie img {
   width: 100%;
 }
-main .movie .movie-info {
+
+.movie-info {
   color: #eee;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem 1rem;
   letter-spacing: 0.5px;
 }
-main .movie .movie-info h3 {
+
+.movie-info h3 {
   margin-top: 0;
 }
-main .movie .movie-info span {
-  background-color: #22254b;
+
+.movie-info span {
+  background-color: var(--primary-color);
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
   font-weight: bold;
 }
-main .movie .movie-info span.green {
+
+.movie-info span.green {
   color: lightgreen;
 }
-main .movie .movie-info span.orange {
+
+.movie-info span.orange {
   color: orange;
 }
-main .movie .movie-info span.red {
+
+.movie-info span.red {
   color: red;
 }
-main .movie .overview {
+
+.overview {
   background-color: #fff;
   padding: 2rem;
   position: absolute;
@@ -83,10 +101,10 @@ main .movie .overview {
   right: 0;
   max-height: 100%;
   transform: translateY(101%);
+  overflow-y: auto;
   transition: transform 0.3s ease-in;
 }
-main:hover .overview {
+
+.movie:hover .overview {
   transform: translateY(0);
 }
-
-/*# sourceMappingURL=style.css.map */

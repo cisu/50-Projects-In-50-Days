@@ -34,13 +34,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var main = document.getElementById('main');
 var API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=19ccf6ae4e8e6cee938c90c60ebe4670&page=1';
-var IMG_PATH = 'https://image.tmdb.org/t/p/w500';
+var IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
 var SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=19ccf6ae4e8e6cee938c90c60ebe4670&query="';
+var main = document.getElementById('main');
 var form = document.getElementById('form');
 var search = document.getElementById('search');
-//  Get initial movies
+// Get initial movies
 getMovies(API_URL);
 function getMovies(url) {
     return __awaiter(this, void 0, void 0, function () {
@@ -61,12 +61,11 @@ function getMovies(url) {
 }
 function showMovies(movies) {
     main.innerHTML = '';
-    movies.forEach(function () {
+    movies.forEach(function (movie) {
         var title = movie.title, poster_path = movie.poster_path, vote_average = movie.vote_average, overview = movie.overview;
-        var movieEl = document
-            .createElement('div')
-            .removeChild.classList.add('movie');
-        movieEl.innerHTML = "\n      <img\n        src=\"" + (IMG_PATH + poster_path) + "\"\n        alt=\"" + title + "\"\n      />\n      <div class=\"movie-info\">\n        <h3>" + title + "</h3>\n        <span class=\"" + getClassByRate(vote_average) + "\">" + vote_average + "</span>\n      </div>\n      <div class=\"overview\">\n        <h3>Overview</h3>\n        " + overview + "\n      </div>";
+        var movieEl = document.createElement('div');
+        movieEl.classList.add('movie');
+        movieEl.innerHTML = "\n            <img src=\"" + (IMG_PATH + poster_path) + "\" alt=\"" + title + "\">\n            <div class=\"movie-info\">\n          <h3>" + title + "</h3>\n          <span class=\"" + getClassByRate(vote_average) + "\">" + vote_average + "</span>\n            </div>\n            <div class=\"overview\">\n          <h3>Overview</h3>\n          " + overview + "\n        </div>\n        ";
         main.appendChild(movieEl);
     });
 }
@@ -77,14 +76,14 @@ function getClassByRate(vote) {
     else if (vote >= 5) {
         return 'orange';
     }
-    else if (vote < 5) {
+    else {
         return 'red';
     }
 }
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     var searchTerm = search.value;
-    if (search && searchTerm !== '') {
+    if (searchTerm && searchTerm !== '') {
         getMovies(SEARCH_API + searchTerm);
         search.value = '';
     }
