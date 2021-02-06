@@ -1,11 +1,11 @@
 //  Inspired by this dribbble shot https://dribbble.com/shots/5958443-Alarm-clock
 
-const hourEl = document.querySelector('.hour');
-const minuteEl = document.querySelector('.minute');
-const secondEl = document.querySelector('.second');
-const timeEl = document.querySelector('.time');
-const dateEl = document.querySelector('.date');
-const toggle = document.querySelector('.toggle');
+const hourEl = document.querySelector<HTMLElement>('.hour');
+const minuteEl = document.querySelector<HTMLElement>('.minute');
+const secondEl = document.querySelector<HTMLElement>('.second');
+const timeEl = document.querySelector<HTMLElement>('.time');
+const dateEl = document.querySelector<HTMLElement>('.date');
+const toggle = document.querySelector<HTMLElement>('.toggle');
 
 const days = [
   'Sunday',
@@ -32,7 +32,7 @@ const months = [
 ];
 
 toggle.addEventListener('click', (e) => {
-  const html = document.querySelector('html');
+  const html  =  document.querySelector('html');
   if (html.classList.contains('dark')) {
     html.classList.remove('dark');
     e.target.innerHTML = 'Dark mode';
