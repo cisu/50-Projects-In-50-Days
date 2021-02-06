@@ -32,7 +32,7 @@ const months = [
 ];
 
 toggle.addEventListener('click', (e) => {
-  const html  =  document.querySelector('html');
+  const html = document.querySelector<HTMLElement>('html');
   if (html.classList.contains('dark')) {
     html.classList.remove('dark');
     e.target.innerHTML = 'Dark mode';
@@ -49,7 +49,7 @@ function setTime() {
   const date = time.getDate();
   const hours = time.getHours();
   const hoursForClock = hours >= 13 ? hours % 12 : hours;
-  const minutes = time.getMinutes();
+  const minutes = time.getMinutes();  
   const seconds = time.getSeconds();
   const ampm = hours >= 12 ? 'PM' : 'AM';
 
