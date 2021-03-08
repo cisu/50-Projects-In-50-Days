@@ -19,7 +19,7 @@ function getData() {
   profile_img.innerHTML =
     '<img src="https://randomuser.me/api/portraits/men/0.jpg" alt="" />';
   name.innerHTML = 'John Doe';
-  date.innerHTML = 'Oct 16, 2020';
+  date.innerHTML = 'Oct 16e, 2020';
 
   animated_bgs.forEach((bg) => bg.classList.remove('animated-bg'));
   animated_bg_texts.forEach((bg) => bg.classList.remove('animated-bg-text'));
